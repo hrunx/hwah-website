@@ -1,6 +1,7 @@
 import React from "react";
 import Badges from "@/components/Badges";
 import RevealTimeline from "@/components/RevealTimeline";
+import DraggableTimeline from "@/components/DraggableTimeline";
 
 const GOLD = "#D4AF37";
 
@@ -18,7 +19,7 @@ export default function DataService() {
           </div>
         ))}
       </div>
-      <RevealTimeline title="Data lifecycle" steps={[
+      <DraggableTimeline title="Data lifecycle" steps={[
         { k: "Model", d: "Agree on metrics and owners" },
         { k: "Ingest", d: "Pipelines to BigQuery/Postgres" },
         { k: "Validate", d: "Tests, lineage, and reviews" },

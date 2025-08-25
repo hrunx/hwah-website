@@ -1,6 +1,7 @@
 import React from "react";
 import Badges from "@/components/Badges";
 import RevealTimeline from "@/components/RevealTimeline";
+import DraggableTimeline from "@/components/DraggableTimeline";
 
 const GOLD = "#D4AF37";
 
@@ -18,7 +19,7 @@ export default function Automation() {
           </div>
         ))}
       </div>
-      <RevealTimeline title="Path to live" steps={[
+      <DraggableTimeline title="Path to live" steps={[
         { k: "Map", d: "Steps, owners, integrations" },
         { k: "Slice", d: "Prototype within 1–2 weeks" },
         { k: "Harden", d: "Auth, logs, alerts, docs" },

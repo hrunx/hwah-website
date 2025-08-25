@@ -1,6 +1,7 @@
 import React from "react";
 import Badges from "@/components/Badges";
 import RevealTimeline from "@/components/RevealTimeline";
+import DraggableTimeline from "@/components/DraggableTimeline";
 
 const GOLD = "#D4AF37";
 
@@ -23,7 +24,7 @@ export default function AIService() {
             </div>
           ))}
         </div>
-        <RevealTimeline title="How we ship" steps={[
+        <DraggableTimeline title="How we ship" steps={[
           { k: "Discovery", d: "Use‑cases, data sources, and risk mapping." },
           { k: "Prototype", d: "Vertical slice in 1–2 weeks with real content." },
           { k: "Integrate", d: "AuthN/Z, logging, dashboards, and handover." },

@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import DraggableTimeline from "@/components/DraggableTimeline";
 import type { Variants } from "framer-motion";
 import { Rocket, Cpu, Radar, ShieldCheck, ArrowRight, Gauge, Cable } from "lucide-react";
 
@@ -140,28 +141,20 @@ function Solutions() {
 
 function Approach() {
   const steps = [
-    { k: "Discover", d: "Stakeholder interviews, current-state mapping, risk and dependency charting, measurable outcome definition." },
-    { k: "Prototype", d: "Thin vertical slice within 1–2 weeks with real data, behind feature flags; fast feedback loops." },
-    { k: "Integrate", d: "Harden for prod: authN/Z, logging, SLOs, runbooks, training; change management in place." },
-    { k: "Operate", d: "Observability dashboards, alerts, quarterly improvement cadence, and cost/perf guardrails." },
+    { k: "Discover", d: "Interviews, current‑state map, risks, and outcomes that matter." },
+    { k: "Prototype", d: "A thin vertical slice in 1–2 weeks with real data behind flags." },
+    { k: "Integrate", d: "Auth, logs, dashboards, runbooks; safe change controls in place." },
+    { k: "Operate", d: "Observability, reviews, and quarterly upgrades with cost/perf guardrails." },
   ];
   return (
     <section id="approach" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-10 text-center">
           <h2 className="heading-underline text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Approach</h2>
-          <p className="mt-2 text-white/80">Small parts, well-documented. No mystery boxes.</p>
+          <p className="mt-2 text-white/80">Drag through the steps — we make momentum inevitable.</p>
         </div>
         <div className="mx-auto max-w-4xl">
-          <ol className="relative space-y-6 border-l pl-6" style={{ borderColor: `${GOLD}55` }}>
-            {steps.map((s, i) => (
-              <motion.li key={i} initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ type: "spring", stiffness: 120, damping: 18 }}>
-                <div className="absolute -left-[9px] top-1 h-4 w-4 rounded-full" style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_SOFT})` }} />
-                <h3 className="text-lg font-semibold" style={{ color: GOLD }}>{i + 1}. {s.k}</h3>
-                <p className="text-sm text-white/80">{s.d}</p>
-              </motion.li>
-            ))}
-          </ol>
+          <DraggableTimeline steps={steps} />
         </div>
       </div>
     </section>

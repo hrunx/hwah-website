@@ -1,6 +1,7 @@
 import React from "react";
 import Badges from "@/components/Badges";
 import RevealTimeline from "@/components/RevealTimeline";
+import DraggableTimeline from "@/components/DraggableTimeline";
 
 const GOLD = "#D4AF37";
 
@@ -18,7 +19,7 @@ export default function SecurityService() {
           </div>
         ))}
       </div>
-      <RevealTimeline title="Security by habit" steps={[
+      <DraggableTimeline title="Security by habit" steps={[
         { k: "Assess", d: "Boundary and secret reviews" },
         { k: "Harden", d: "Policies, least privilege, logs" },
         { k: "Train", d: "Runbooks and awareness" },
