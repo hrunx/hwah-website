@@ -5,7 +5,7 @@ const GOLD_SOFT = "#E6C766";
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-black/60" style={{ borderColor: `${GOLD}33` }}>
+    <footer className="relative z-10 border-t bg-black/60" style={{ borderColor: `${GOLD}33` }}>
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm" style={{ color: GOLD_SOFT }}>© {new Date().getFullYear()} HWAH. All rights reserved.</p>
@@ -13,7 +13,7 @@ export default function Footer() {
             <a href="/legal/privacy" className="hover:opacity-90" style={{ color: GOLD_SOFT }}>Privacy</a>
             <a href="/legal/terms" className="hover:opacity-90" style={{ color: GOLD_SOFT }}>Terms</a>
             <a href="/legal/dpa" className="hover:opacity-90" style={{ color: GOLD_SOFT }}>DPA</a>
-            <a href="mailto:support@hwah.net" className="hover:opacity-90" style={{ color: GOLD_SOFT }}>Support</a>
+            <a href="mailto:hrn@hwah.net" className="hover:opacity-90" style={{ color: GOLD_SOFT }}>Support</a>
           </div>
         </div>
       </div>

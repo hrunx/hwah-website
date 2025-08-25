@@ -39,7 +39,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Let’s make your operations observable and automatic</h1>
-            <p className="mt-2 text-white/80">Email <a href="mailto:hello@hwah.net" className="underline" style={{ color: GOLD_SOFT }}>hello@hwah.net</a> or use the form below. Response within one business day.</p>
+            <p className="mt-2 text-white/80">Email <a href="mailto:hrn@hwah.net" className="underline" style={{ color: GOLD_SOFT }}>hrn@hwah.net</a> or use the form below. Response within one business day.</p>
           </div>
           <div className="mx-auto mt-8 max-w-2xl">
             <form name="contact" data-netlify="true" netlify-honeypot="bot-field" onSubmit={onSubmit} className="grid gap-4 rounded-2xl border bg-black/50 p-6 shadow-sm backdrop-blur" style={{ borderColor: `${GOLD}55` }}>

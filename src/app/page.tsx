@@ -34,7 +34,7 @@ function Hero() {
       </div>
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28">
         <motion.div variants={container} initial="hidden" animate="show" className="text-center">
-          <motion.h1 variants={item} className="mx-auto max-w-4xl text-4xl font-extrabold tracking-tight sm:text-6xl" style={{ color: GOLD }}>
+          <motion.h1 variants={item} className="font-display mx-auto max-w-4xl text-4xl font-extrabold tracking-tight sm:text-6xl" style={{ color: GOLD }}>
             Build once. Automate forever.
           </motion.h1>
           <motion.p variants={item} className="mx-auto mt-3 max-w-3xl text-balance text-lg" style={{ color: GOLD_SOFT }}>
@@ -59,7 +59,7 @@ function Hero() {
               <div className="mb-3 inline-flex rounded-xl p-2 text-black" style={{ backgroundColor: GOLD }}>
                 <f.icon className="h-5 w-5" />
               </div>
-              <h3 className="text-lg font-semibold" style={{ color: GOLD }}>{f.title}</h3>
+              <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>{f.title}</h3>
               <p className="mt-1 text-sm text-white/80">{f.desc}</p>
             </motion.div>
           ))}
@@ -143,10 +143,10 @@ function Solutions() {
 
 function Approach() {
   const steps = [
-    { k: "Discover", d: "Map the real workflow and constraints." },
-    { k: "Prototype", d: "A thin vertical slice in 1–2 weeks." },
-    { k: "Integrate", d: "Harden, test, document, train." },
-    { k: "Operate", d: "SLOs, observability, and change control." },
+    { k: "Discover", d: "Stakeholder interviews, current-state mapping, risk and dependency charting, measurable outcome definition." },
+    { k: "Prototype", d: "Thin vertical slice within 1–2 weeks with real data, behind feature flags; fast feedback loops." },
+    { k: "Integrate", d: "Harden for prod: authN/Z, logging, SLOs, runbooks, training; change management in place." },
+    { k: "Operate", d: "Observability dashboards, alerts, quarterly improvement cadence, and cost/perf guardrails." },
   ];
   return (
     <section id="approach" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
@@ -204,7 +204,7 @@ function Contact() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Let’s make your ops observable & automatic</h2>
-          <p className="mt-2 text-white/80">Email <a href="mailto:hello@hwah.net" className="underline" style={{ color: GOLD_SOFT }}>hello@hwah.net</a>. We reply within one business day.</p>
+          <p className="mt-2 text-white/80">Email <a href="mailto:hrn@hwah.net" className="underline" style={{ color: GOLD_SOFT }}>hrn@hwah.net</a>. We reply within one business day.</p>
         </div>
         <div className="mx-auto mt-8 max-w-2xl">
           <form name="contact" method="POST" data-netlify="true" className="grid gap-4 rounded-2xl border bg-black/50 p-6 shadow-sm backdrop-blur" style={{ borderColor: `${GOLD}55` }}>
@@ -235,7 +235,7 @@ function Contact() {
 
 export default function Page() {
   return (
-    <div className="relative min-h-screen bg-black text-white">
+    <div className="relative min-h-screen text-white">
       <Hero />
       <Services />
       <Solutions />

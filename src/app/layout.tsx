@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Cinzel } from "next/font/google";
 import "./globals.css";
 import Stars from "@/components/Stars";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
+const display = Cinzel({ subsets: ["latin"], variable: "--font-display" });
 
 export const metadata: Metadata = {
   title: "HWAH Industries — Endless Possibilities",
@@ -31,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} ${display.variable} antialiased`}>
         <Stars />
         <div className="relative z-10">
           <Nav />
