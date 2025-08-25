@@ -93,7 +93,7 @@ function Services() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, type: "spring", stiffness: 110, damping: 16 }}
               href={c.href}
-              className="relative overflow-hidden rounded-2xl border bg-black/50 p-6 shadow-sm backdrop-blur transition hover:bg-white/5"
+              className="card-star-hover relative overflow-hidden rounded-2xl border bg-black/50 p-6 shadow-sm backdrop-blur transition hover:bg-white/5"
               style={{ borderColor: `${GOLD}55` }}
             >
               <div className="mb-3 inline-flex rounded-xl p-2 text-black" style={{ backgroundColor: GOLD }}>

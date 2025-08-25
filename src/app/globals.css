@@ -99,3 +99,21 @@ html { scroll-behavior: smooth; }
   animation: underlineGrow 1.1s ease forwards;
 }
 @keyframes underlineGrow { to { width: 100%; } }
+
+/* Card star hover */
+.card-star-hover {
+  position: relative;
+  border-color: rgba(212,175,55,0.33);
+}
+.card-star-hover:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(#D4AF37 0.6px, transparent 0.6px) 0 0 / 8px 8px,
+    radial-gradient(#E6C766 0.6px, transparent 0.6px) 4px 4px / 10px 10px;
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+}
+.card-star-hover:hover:before { opacity: .18; }

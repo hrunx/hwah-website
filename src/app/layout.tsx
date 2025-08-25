@@ -10,18 +10,18 @@ const bodyFont = Sora({ subsets: ["latin"], display: "swap" });
 const display = Oxanium({ subsets: ["latin"], variable: "--font-display" });
 
 export const metadata: Metadata = {
-  title: "HWAH Industries — Endless Possibilities",
+  title: "HWAH Industries | Build once. Automate forever.",
   description:
-    "AI & automation, IoT telemetry, and data systems delivered security-first.",
+    "Saudi-born systems studio turning messy ops into measurable outcomes—AI copilots, IoT telemetry, and clean data pipelines. Secure by default. NDA‑friendly casework.",
   icons: {
     icon: "/icon.png",
     apple: "/apple-touch-icon.png",
   },
   metadataBase: new URL("https://hwah.net"),
   openGraph: {
-    title: "HWAH Industries",
+    title: "HWAH Industries — Endless Possibilities",
     description:
-      "Build once. Automate forever. AI copilots, IoT telemetry, and clean data pipelines.",
+      "We ship small, composable systems that outlive hype cycles. Field to dashboard. Inbox to insight.",
     images: ["/brand/hwah-logo-gold.jpg"],
   },
 };
