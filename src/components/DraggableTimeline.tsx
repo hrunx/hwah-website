@@ -51,7 +51,7 @@ export default function DraggableTimeline({ steps, title }: { steps: Step[]; tit
         <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>{title}</h3>
       ) : null}
       <div className="mt-4">
-        <div ref={trackRef} className="relative h-10 w-full select-none">
+        <div ref={trackRef} className="relative h-12 w-full select-none sm:h-10">
           <div
             className="absolute top-1/2 h-1 w-full -translate-y-1/2 rounded-full"
             style={{ background: `linear-gradient(90deg, ${GOLD}99, ${GOLD_SOFT}66)` }}
@@ -61,13 +61,13 @@ export default function DraggableTimeline({ steps, title }: { steps: Step[]; tit
               key={i}
               type="button"
               onClick={() => setActive(i)}
-              className="absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full"
+              className="absolute top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full sm:h-3 sm:w-3"
               style={{ left, background: i === active ? GOLD : `${GOLD}66` }}
               aria-label={`Step ${i + 1}`}
             />
           ))}
           <motion.div
-            className="absolute top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 cursor-grab rounded-full shadow"
+            className="absolute top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 cursor-grab rounded-full shadow sm:h-5 sm:w-5"
             style={{ x, background: `radial-gradient(circle, ${GOLD}, ${GOLD_SOFT})` }}
             drag="x"
             dragConstraints={{ left: 0, right: Math.max(positions[positions.length - 1] || 0, 0) }}
@@ -77,8 +77,8 @@ export default function DraggableTimeline({ steps, title }: { steps: Step[]; tit
           />
         </div>
         <div className="mt-5 rounded-2xl border bg-black/50 p-4" style={{ borderColor: `${GOLD}55` }}>
-          <h4 className="font-display text-sm font-semibold" style={{ color: GOLD }}>{active + 1}. {steps[active]?.k}</h4>
-          <p className="mt-1 text-sm text-white/85">{steps[active]?.d}</p>
+          <h4 className="font-display text-base font-semibold sm:text-sm" style={{ color: GOLD }}>{active + 1}. {steps[active]?.k}</h4>
+          <p className="mt-1 text-[0.95rem] text-white/85 sm:text-sm">{steps[active]?.d}</p>
         </div>
       </div>
     </div>

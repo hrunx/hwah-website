@@ -40,9 +40,10 @@ export default function Stars() {
       canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      // density scales with area; tuned for a sparse, premium look
+      // density scales with area; tuned for a sparse, premium look; reduce on small screens
       const base = Math.round((width * height) / 12000);
-      const count = Math.min(900, Math.max(250, base));
+      const isSmall = width < 640;
+      const count = Math.min(900, Math.max(isSmall ? 180 : 250, isSmall ? Math.floor(base * 0.75) : base));
       stars = Array.from({ length: count }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
