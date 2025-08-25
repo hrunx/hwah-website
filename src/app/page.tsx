@@ -50,6 +50,15 @@ function Hero() {
             </a>
           </motion.div>
         </motion.div>
+        <div className="mx-auto mt-10 max-w-5xl text-center text-sm" style={{ color: GOLD_SOFT }}>
+          <span className="rounded-full border px-3 py-1" style={{ borderColor: `${GOLD}44` }}>Built in KSA</span>
+          <span className="mx-2">•</span>
+          <span className="rounded-full border px-3 py-1" style={{ borderColor: `${GOLD}44` }}>Arabic/English</span>
+          <span className="mx-2">•</span>
+          <span className="rounded-full border px-3 py-1" style={{ borderColor: `${GOLD}44` }}>NDA‑friendly</span>
+          <span className="mx-2">•</span>
+          <span className="rounded-full border px-3 py-1" style={{ borderColor: `${GOLD}44` }}>Security‑minded by default</span>
+        </div>
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: "spring", stiffness: 120, damping: 18 }} className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-3">
           {[
             { icon: Cpu, title: "Systems that stick.", desc: "Small parts. Strong docs. Observable pipelines." },
@@ -82,7 +91,7 @@ function Services() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-10 text-center">
           <h2 className="heading-underline text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Services</h2>
-          <p className="mt-2 text-white/80">Small, composable systems that survive contact with reality.</p>
+          <p className="mt-2 text-white/80">Small, composable systems that outlive hype cycles.</p>
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c, i) => (
