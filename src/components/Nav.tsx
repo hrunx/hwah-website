@@ -19,7 +19,7 @@ export default function Nav() {
         <div className="hidden gap-6 text-sm sm:flex" style={{ color: GOLD_SOFT }}>
           <Link href="/services" className="hover:text-white">Services</Link>
           <Link href="/industries" className="hover:text-white">Industries</Link>
-          <Link href="/work" className="hover:text-white">Casework</Link>
+          <Link href="/work" className="hover:text-white">Portfolio</Link>
           <Link href="/about" className="hover:text-white">About</Link>
         </div>
         <Link href="/contact" className="btn-gold-outline inline-flex items-center gap-2 px-4 py-2 font-medium">

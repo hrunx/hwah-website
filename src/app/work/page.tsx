@@ -13,9 +13,10 @@ export default function Work() {
   ];
   return (
     <div className="text-white">
-      <PageHeader title="Work" subtitle="Names available under NDA. We prefer outcomes over big logos." />
+      <PageHeader title="Portfolio" subtitle="Thousands shipped. Here are a few that made a dent." />
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <p className="text-white/80">Names available under NDA. We prefer measurable outcomes over big logos.</p>
+        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {items.map((c, i) => (
             <div key={i} className="card-star-hover rounded-2xl border bg-black/50 p-6 backdrop-blur" style={{ borderColor: `${GOLD}55` }}>
               <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>{c.t}</h3>

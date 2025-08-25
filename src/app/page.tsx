@@ -45,8 +45,8 @@ function Hero() {
             <a href="#contact" className="btn-gold-outline inline-flex items-center gap-2 px-5 py-3 font-medium">
               <Rocket className="h-4 w-4" /> Book a discovery call
             </a>
-            <a href="/case-studies" className="btn-gold-outline inline-flex items-center gap-2 px-5 py-3 font-medium">
-              See case studies <ArrowRight className="h-4 w-4" />
+            <a href="/services" className="btn-gold-outline inline-flex items-center gap-2 px-5 py-3 font-medium">
+              Explore services <ArrowRight className="h-4 w-4" />
             </a>
           </motion.div>
         </motion.div>
@@ -112,6 +112,63 @@ function Services() {
               <p className="mt-2 text-sm text-white/80">{c.desc}</p>
             </motion.a>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Outcomes() {
+  const tiles = [
+    { t: "Fewer clicks, faster flows.", d: "Routine processes cut by 30–70% steps." },
+    { t: "From field to decision.", d: "Sensors → rules/alerts → dashboards with explainable metrics." },
+    { t: "Clear ownership.", d: "Who did what, when, and why — no more email archaeology." },
+    { t: "Saudization‑ready.", d: "WPS exports, ZATCA e‑invoicing, bilingual artifacts." },
+  ];
+  return (
+    <section id="outcomes" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <div className="mb-10 text-center">
+          <h2 className="heading-underline text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Outcomes</h2>
+          <p className="mt-2 text-white/80">Operator‑level wins you can measure.</p>
+        </div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {tiles.map((c, i) => (
+            <div key={i} className="card-star-hover rounded-2xl border bg-black/50 p-6 backdrop-blur" style={{ borderColor: `${GOLD}55` }}>
+              <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>{c.t}</h3>
+              <p className="mt-2 text-sm text-white/85">{c.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WhatWeShip() {
+  const items = [
+    "AI assistants for internal teams",
+    "IoT ingest → rules/alerts → dashboards",
+    "Gmail/Sheets/Docs/Drive automations",
+    "Contract and NDA pipelines",
+    "KPI models and data quality checks",
+    "Secure credential handling",
+    "Observability and runbooks",
+  ];
+  return (
+    <section id="what-we-ship" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <div className="mb-6 text-center">
+          <h2 className="heading-underline text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>What we ship</h2>
+        </div>
+        <div className="mx-auto max-w-5xl">
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {items.map((v, i) => (
+              <li key={i} className="card-star-hover rounded-xl border bg-black/50 px-4 py-3 text-sm text-white/85" style={{ borderColor: `${GOLD}44` }}>
+                {v}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
@@ -209,6 +266,36 @@ function CaseStudies() {
   );
 }
 
+function ThinkBand() {
+  return (
+    <section className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+        <div className="rounded-2xl border bg-black/50 p-6 text-center" style={{ borderColor: `${GOLD}55` }}>
+          <p className="text-sm text-white/85">We’re allergic to vanity metrics. We aim for the quietly obvious: fewer clicks, faster loops, cleaner data, smaller blast radius. Systems you can hand to new hires without a two‑hour sermon.</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Newsletter() {
+  return (
+    <section id="newsletter" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <div className="mx-auto max-w-3xl text-center">
+          <h3 className="heading-underline font-display text-2xl font-semibold" style={{ color: GOLD }}>Dispatches from the Lab</h3>
+          <p className="mt-2 text-white/80">Short notes on automation patterns, telemetry pitfalls, and better dashboards. No fluff, no spam.</p>
+          <form name="newsletter" method="POST" data-netlify="true" className="mx-auto mt-5 flex max-w-xl items-center gap-2">
+            <input type="hidden" name="form-name" value="newsletter" />
+            <input name="email" type="email" required placeholder="you@company.com" className="flex-1 rounded-xl border bg-black/60 px-4 py-3 text-white outline-none" style={{ borderColor: `${GOLD}44` }} />
+            <button className="btn-gold-outline px-4 py-3">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section id="contact" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
@@ -249,9 +336,13 @@ export default function Page() {
     <div className="relative min-h-screen text-white">
       <Hero />
       <Services />
+      <Outcomes />
+      <WhatWeShip />
       <Solutions />
       <Approach />
+      <ThinkBand />
       <CaseStudies />
+      <Newsletter />
       <Contact />
     </div>
   );
