@@ -80,7 +80,7 @@ function Services() {
     <section id="services" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Services</h2>
+          <h2 className="heading-underline text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Services</h2>
           <p className="mt-2 text-white/80">Small, composable systems that survive contact with reality.</p>
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -118,7 +118,7 @@ function Solutions() {
     <section id="solutions" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Solutions</h2>
+          <h2 className="heading-underline text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Solutions</h2>
           <p className="mt-2 text-white/80">Where we apply the tools to move the needle.</p>
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
@@ -149,7 +149,7 @@ function Approach() {
     <section id="approach" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Approach</h2>
+          <h2 className="heading-underline text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Approach</h2>
           <p className="mt-2 text-white/80">Small parts, well-documented. No mystery boxes.</p>
         </div>
         <div className="mx-auto max-w-4xl">
@@ -178,7 +178,7 @@ function CaseStudies() {
     <section id="case-studies" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-10 text-center">
-          <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Strategic Vision & Competitive Edge</h2>
+          <h2 className="heading-underline font-display text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Strategic Vision & Competitive Edge</h2>
           <p className="mt-2 text-white/80">How we operate and why it compounds.</p>
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">

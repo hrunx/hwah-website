@@ -13,7 +13,7 @@ export default function Footer() {
             <a href="/legal/privacy" className="hover:opacity-90" style={{ color: GOLD_SOFT }}>Privacy</a>
             <a href="/legal/terms" className="hover:opacity-90" style={{ color: GOLD_SOFT }}>Terms</a>
             <a href="/legal/dpa" className="hover:opacity-90" style={{ color: GOLD_SOFT }}>DPA</a>
-            <a href="mailto:hrn@hwah.net" className="hover:opacity-90" style={{ color: GOLD_SOFT }}>Support</a>
+            <a href="/contact" className="hover:opacity-90" style={{ color: GOLD_SOFT }}>Support</a>
           </div>
         </div>
       </div>
