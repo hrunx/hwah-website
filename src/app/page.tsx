@@ -71,9 +71,10 @@ function Hero() {
 
 function Services() {
   const cards = [
-    { icon: Cpu, title: "AI & Automation", points: ["Internal copilots (Drive/DB retrieval)", "Apps Script: Gmail/Sheets/Docs flows", "Process orchestration with retries & logs", "Doc templating + e-sign + archives"], tag: "Reliable gears" },
-    { icon: Gauge, title: "Data & Analytics", points: ["KPI model + semantic layer", "ETL/ELT → BigQuery/Postgres", "Looker Studio / Metabase dashboards", "Data quality checks & lineage"], tag: "Metrics that matter" },
-    { icon: Cable, title: "IoT & Telemetry", points: ["Sensor selection, RS‑485/Modbus", "MQTT/HTTP ingest, rules & alerts", "ThingsBoard or custom dashboards", "RFID/UHF authorization flows"], tag: "Physical ops, observable" },
+    { icon: Cpu, title: "Information Technology (IT) & Digital Transformation", desc: "Software delivery, AI, cloud, and cybersecurity.", href: "/services" },
+    { icon: Cable, title: "Logistics & Supply Chain", desc: "Real‑time tracking, fleet mgmt, warehousing, last‑mile.", href: "/services" },
+    { icon: Gauge, title: "Business Development & Expansion", desc: "Research, market entry, partnerships, revenue ops.", href: "/services" },
+    { icon: ShieldCheck, title: "Technology Innovation & R&D", desc: "AI, blockchain, IoT — proprietary innovation.", href: "/services" },
   ];
   return (
     <section id="services" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
@@ -82,28 +83,24 @@ function Services() {
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Services</h2>
           <p className="mt-2 text-white/80">Small, composable systems that survive contact with reality.</p>
         </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c, i) => (
-            <motion.div
+            <motion.a
               key={i}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, type: "spring", stiffness: 110, damping: 16 }}
-              className="relative overflow-hidden rounded-2xl border bg-black/50 p-6 shadow-sm backdrop-blur"
+              href={c.href}
+              className="relative overflow-hidden rounded-2xl border bg-black/50 p-6 shadow-sm backdrop-blur transition hover:bg-white/5"
               style={{ borderColor: `${GOLD}55` }}
             >
-              <div className="mb-4 inline-flex items-center gap-2 rounded-xl px-3 py-2 text-black" style={{ backgroundColor: GOLD }}>
-                <c.icon className="h-4 w-4" />
-                <span className="text-xs font-medium">{c.tag}</span>
+              <div className="mb-3 inline-flex rounded-xl p-2 text-black" style={{ backgroundColor: GOLD }}>
+                <c.icon className="h-5 w-5" />
               </div>
-              <h3 className="text-xl font-semibold" style={{ color: GOLD }}>{c.title}</h3>
-              <ul className="mt-3 space-y-2 text-sm text-white/80">
-                {c.points.map((p, j) => (
-                  <li key={j} className="flex items-start gap-2"><span className="mt-2 h-1.5 w-1.5 rounded-full" style={{ backgroundColor: GOLD }} />{p}</li>
-                ))}
-              </ul>
-            </motion.div>
+              <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>{c.title}</h3>
+              <p className="mt-2 text-sm text-white/80">{c.desc}</p>
+            </motion.a>
           ))}
         </div>
       </div>
@@ -181,17 +178,29 @@ function CaseStudies() {
     <section id="case-studies" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Case Studies</h2>
-          <p className="mt-2 text-white/80">Anonymized snapshots. Names available under NDA.</p>
+          <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Strategic Vision & Competitive Edge</h2>
+          <p className="mt-2 text-white/80">How we operate and why it compounds.</p>
         </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-          {cases.map((c, i) => (
-            <motion.div key={i} initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ type: "spring", stiffness: 120, damping: 18 }} className="rounded-2xl border bg-black/50 p-6 shadow-sm backdrop-blur" style={{ borderColor: `${GOLD}55` }}>
-              <h3 className="text-lg font-semibold" style={{ color: GOLD }}>{c.title}</h3>
-              <p className="mt-1 text-sm" style={{ color: GOLD_SOFT }}>Impact: {c.impact}</p>
-              <p className="mt-2 text-sm text-white/80">{c.scope}</p>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className="rounded-2xl border bg-black/50 p-6 backdrop-blur" style={{ borderColor: `${GOLD}55` }}>
+            <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>Strategic Vision & Leadership</h3>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-white/85">
+              <li>Innovation — AI and emerging tech for disruption</li>
+              <li>Operational Excellence — automation and transformation</li>
+              <li>Scalability — sustainable growth</li>
+              <li>Customer‑centric — tailored solutions</li>
+              <li>Ethical & Sustainable — responsible practices</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl border bg-black/50 p-6 backdrop-blur" style={{ borderColor: `${GOLD}55` }}>
+            <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>Competitive Advantages</h3>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-white/85">
+              <li>Cross‑industry expertise</li>
+              <li>Technology‑driven solutions</li>
+              <li>Scalability & global vision</li>
+              <li>Leadership & innovation</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

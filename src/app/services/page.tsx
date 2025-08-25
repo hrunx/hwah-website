@@ -2,34 +2,53 @@ import React from "react";
 import PageHeader from "@/components/PageHeader";
 
 const GOLD = "#D4AF37";
-const GOLD_SOFT = "#E6C766";
 
 export default function ServicesIndex() {
+  const areas = [
+    {
+      title: "Information Technology (IT) & Digital Transformation",
+      bullets: [
+        "Enterprise software tailored to business needs",
+        "AI, cloud, and cybersecurity to enhance efficiency",
+        "Modernize processes and optimize workflows",
+      ],
+    },
+    {
+      title: "Logistics & Supply Chain Management",
+      bullets: [
+        "Strategic planning to improve supply chain efficiency",
+        "Real‑time tracking, fleet management, automated logistics",
+        "End‑to‑end warehousing, distribution, last‑mile",
+      ],
+    },
+    {
+      title: "Business Development & Market Expansion",
+      bullets: [
+        "Market research and competitive analysis",
+        "Expansion into emerging industries with new models",
+        "Partnerships and collaborations to grow revenue",
+      ],
+    },
+    {
+      title: "Technology Innovation & R&D",
+      bullets: [
+        "Investment to stay ahead of trends",
+        "AI, blockchain, and IoT automation focus",
+        "Proprietary tech to boost efficiency",
+      ],
+    },
+  ];
   return (
     <div className="text-white">
-      <PageHeader title="Services" subtitle="Small, composable systems that survive contact with reality." />
+      <PageHeader title="Services" subtitle="Where HWAH compounds value across disciplines." />
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[{
-            href: "/services/automation",
-            title: "AI & Automation",
-            desc: "Internal copilots and Workspace flows that stick.",
-          }, {
-            href: "/services/iot",
-            title: "IoT & Telemetry",
-            desc: "Sensors → ingest → rules/alerts → dashboards.",
-          }, {
-            href: "/services/analytics",
-            title: "Data & Analytics",
-            desc: "KPI model, pipelines, and dashboards that matter.",
-          }, {
-            href: "/services/lab",
-            title: "Security R&D Lab",
-            desc: "Defensive research and validation patterns.",
-          }].map((c, i) => (
-            <a key={i} href={c.href} className="rounded-2xl border bg-black/50 p-6 shadow-sm backdrop-blur transition hover:bg-white/5" style={{ borderColor: `${GOLD}55` }}>
-              <h3 className="text-lg font-semibold" style={{ color: GOLD }}>{c.title}</h3>
-              <p className="mt-2 text-sm text-white/80">{c.desc}</p>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {areas.map((a, i) => (
+            <a key={i} href={`#`} className="rounded-2xl border bg-black/50 p-6 backdrop-blur transition hover:bg-white/5" style={{ borderColor: `${GOLD}55` }}>
+              <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>{a.title}</h3>
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-white/85">
+                {a.bullets.map((b, j) => (<li key={j}>{b}</li>))}
+              </ul>
             </a>
           ))}
         </div>
