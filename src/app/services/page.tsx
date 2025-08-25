@@ -6,35 +6,39 @@ const GOLD = "#D4AF37";
 export default function ServicesIndex() {
   const areas = [
     {
-      title: "Information Technology (IT) & Digital Transformation",
+      title: "AI Systems & Internal Copilots",
+      href: "/services/ai",
       bullets: [
-        "Enterprise software tailored to business needs",
-        "AI, cloud, and cybersecurity to enhance efficiency",
-        "Modernize processes and optimize workflows",
+        "Chat + retrieval on your docs and data",
+        "Agentic workflows with approvals and logs",
+        "Secure prompt design and red‑team testing",
       ],
     },
     {
-      title: "Logistics & Supply Chain Management",
+      title: "Automation & Workspace Ops",
+      href: "/services/automation",
       bullets: [
-        "Strategic planning to improve supply chain efficiency",
-        "Real‑time tracking, fleet management, automated logistics",
-        "End‑to‑end warehousing, distribution, last‑mile",
+        "Google Workspace and SaaS orchestration",
+        "Docs/Sheets/Gmail flows with traceability",
+        "Idempotent jobs with retries and alerts",
       ],
     },
     {
-      title: "Business Development & Market Expansion",
+      title: "Data Platforms & Analytics",
+      href: "/services/data",
       bullets: [
-        "Market research and competitive analysis",
-        "Expansion into emerging industries with new models",
-        "Partnerships and collaborations to grow revenue",
+        "Semantic layer + KPI design",
+        "Pipelines to BigQuery/Postgres",
+        "Operational dashboards and quality checks",
       ],
     },
     {
-      title: "Technology Innovation & R&D",
+      title: "Security & Readiness",
+      href: "/services/security",
       bullets: [
-        "Investment to stay ahead of trends",
-        "AI, blockchain, and IoT automation focus",
-        "Proprietary tech to boost efficiency",
+        "Least privilege and boundary reviews",
+        "Secret handling and key hygiene",
+        "Audit trails, policies, and training",
       ],
     },
   ];
@@ -44,7 +48,7 @@ export default function ServicesIndex() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {areas.map((a, i) => (
-            <a key={i} href={`#`} className="rounded-2xl border bg-black/50 p-6 backdrop-blur transition hover:bg-white/5" style={{ borderColor: `${GOLD}55` }}>
+            <a key={i} href={a.href} className="rounded-2xl border bg-black/50 p-6 backdrop-blur transition hover:bg-white/5" style={{ borderColor: `${GOLD}55` }}>
               <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>{a.title}</h3>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-white/85">
                 {a.bullets.map((b, j) => (<li key={j}>{b}</li>))}
