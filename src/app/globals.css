@@ -16,6 +16,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  letter-spacing: 0.1px;
 }
 
 /* Smooth scrolling for anchors */
@@ -63,3 +64,20 @@ html { scroll-behavior: smooth; }
 .btn-gold-outline:hover:before { opacity: .22; transform: scale(1); }
 .btn-gold-outline:hover:after { opacity: .35; transform: translate3d(0, 0, 0); }
 .btn-gold-outline:active { box-shadow: 0 0 0 3px rgba(212,175,55,0.35); }
+
+/* Subtle shimmer for headings */
+.shimmer {
+  position: relative;
+}
+.shimmer:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+  transform: translateX(-150%);
+  pointer-events: none;
+}
+.shimmer:hover:after {
+  transition: transform .9s ease;
+  transform: translateX(150%);
+}

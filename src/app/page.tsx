@@ -38,22 +38,22 @@ function Hero() {
             Build once. Automate forever.
           </motion.h1>
           <motion.p variants={item} className="mx-auto mt-3 max-w-3xl text-balance text-lg" style={{ color: GOLD_SOFT }}>
-            HWAH designs lean, secure systems that remove busywork and surface truth—AI copilots, IoT telemetry, and clean data pipelines. Faster ops, fewer clicks, better decisions.
+            We design AI systems and automations that kill busywork and surface truth. Less drag, more signal. Built clean. Shipped fast.
           </motion.p>
           <motion.div variants={item} className="mt-8 flex items-center justify-center gap-3">
             <a href="#contact" className="btn-gold-outline inline-flex items-center gap-2 px-5 py-3 font-medium">
               <Rocket className="h-4 w-4" /> Book a discovery call
             </a>
-            <a href="#case-studies" className="btn-gold-outline inline-flex items-center gap-2 px-5 py-3 font-medium">
+            <a href="/case-studies" className="btn-gold-outline inline-flex items-center gap-2 px-5 py-3 font-medium">
               See case studies <ArrowRight className="h-4 w-4" />
             </a>
           </motion.div>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: "spring", stiffness: 120, damping: 18 }} className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-3">
           {[
-            { icon: Cpu, title: "Automation that sticks.", desc: "Lightweight workflows across Workspace, APIs, and your stack—documented and observable." },
-            { icon: Radar, title: "Instrumentation at the edge.", desc: "From sensors to dashboards: fuel, fleet, and fixed equipment to decisions." },
-            { icon: ShieldCheck, title: "Security-minded by default.", desc: "Least privilege, audit trails, and data minimization built in." },
+            { icon: Cpu, title: "Systems that stick.", desc: "Small parts. Strong docs. Observable pipelines." },
+            { icon: Radar, title: "Signals over noise.", desc: "Dashboards and alerts that actually move decisions." },
+            { icon: ShieldCheck, title: "Secure by habit.", desc: "Least privilege, logs, reviews — day one." },
           ].map((f, i) => (
             <motion.div key={i} variants={item} className="group rounded-2xl border bg-black/50 p-5 shadow-sm backdrop-blur transition hover:shadow" style={{ borderColor: `${GOLD}55` }}>
               <div className="mb-3 inline-flex rounded-xl p-2 text-black" style={{ backgroundColor: GOLD }}>
@@ -110,9 +110,9 @@ function Services() {
 
 function Solutions() {
   const rows = [
-    { title: "Energy & Logistics", bullets: ["Fuel telemetry & control: tank levels, dispenser events, RFID auth", "Fleet visibility: geofences, drum RPM (mixers), L/hr & KM/L", "Procurement & billing automations, VAT-ready docs"] },
-    { title: "Industrial & Field Ops", bullets: ["Work orders: form → ticket → SLA clock → closure report", "Safety/compliance records with timestamped evidence"] },
-    { title: "Back-office Automation", bullets: ["Sales ops: lead capture, sequences, shared inbox playbooks", "HR ops: onboarding/offboarding packs, WPS exports", "Legal ops: NDA/contract templating, e-sign, archive"] },
+    { title: "AI Systems & Copilots", bullets: ["Retrieval chat for your docs", "Agentic workflows with SLAs", "Prompt safety & audits"] },
+    { title: "Automation & Ops", bullets: ["Workspace + SaaS orchestration", "Approvals, retries, alerts", "Runbooks and change control"] },
+    { title: "Data & Readiness", bullets: ["KPIs and semantic layers", "Pipelines + lineage + tests", "Security reviews and logging"] },
   ];
   return (
     <section id="solutions" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
