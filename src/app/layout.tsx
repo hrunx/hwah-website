@@ -5,6 +5,7 @@ import Stars from "@/components/Stars";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import SEOJsonLd from "@/components/SEOJsonLd";
+import CookieBanner from "@/components/CookieBanner";
 
 const bodyFont = Sora({ subsets: ["latin"], display: "swap" });
 const display = Oxanium({ subsets: ["latin"], variable: "--font-display" });
@@ -41,6 +42,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
+        <CookieBanner />
       </body>
     </html>
   );
