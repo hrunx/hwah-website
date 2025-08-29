@@ -36,17 +36,17 @@ function Hero() {
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28">
         <motion.div variants={container} initial="hidden" animate="show" className="text-center">
           <motion.h1 variants={item} className="font-display mx-auto max-w-4xl text-4xl font-extrabold tracking-tight sm:text-6xl" style={{ color: GOLD }}>
-            Build once. Automate forever.
+            ENDLESS POSSIBILITIES
           </motion.h1>
           <motion.p variants={item} className="mx-auto mt-3 max-w-3xl text-balance text-lg" style={{ color: GOLD_SOFT }}>
-            We design AI systems and automations that kill busywork and surface truth. Less drag, more signal. Built clean. Shipped fast.
+            A Saudi‑born systems studio for serious operators. We design small, composable automations that remove busywork and surface truth—AI copilots, IoT telemetry, and clean data pipelines—delivered with security by design.
           </motion.p>
           <motion.div variants={item} className="mt-8 flex items-center justify-center gap-3">
             <a href="#contact" className="btn-gold-outline inline-flex items-center gap-2 px-5 py-3 font-medium">
               <Rocket className="h-4 w-4" /> Book a discovery call
             </a>
-            <a href="/services" className="btn-gold-outline inline-flex items-center gap-2 px-5 py-3 font-medium">
-              Explore services <ArrowRight className="h-4 w-4" />
+            <a href="/work" className="btn-gold-outline inline-flex items-center gap-2 px-5 py-3 font-medium">
+              See the work <ArrowRight className="h-4 w-4" />
             </a>
           </motion.div>
         </motion.div>
@@ -57,7 +57,7 @@ function Hero() {
           <span className="mx-2">•</span>
           <span className="rounded-full border px-3 py-1" style={{ borderColor: `${GOLD}44` }}>NDA‑friendly</span>
           <span className="mx-2">•</span>
-          <span className="rounded-full border px-3 py-1" style={{ borderColor: `${GOLD}44` }}>Security‑minded by default</span>
+          <span className="rounded-full border px-3 py-1" style={{ borderColor: `${GOLD}44` }}>Security by habit</span>
         </div>
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: "spring", stiffness: 120, damping: 18 }} className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-3">
           {[
@@ -122,8 +122,8 @@ function Outcomes() {
   const tiles = [
     { t: "Fewer clicks, faster flows.", d: "Routine processes cut by 30–70% steps." },
     { t: "From field to decision.", d: "Sensors → rules/alerts → dashboards with explainable metrics." },
-    { t: "Clear ownership.", d: "Who did what, when, and why — no more email archaeology." },
-    { t: "Saudization‑ready.", d: "WPS exports, ZATCA e‑invoicing, bilingual artifacts." },
+    { t: "Clear ownership.", d: "Who did what, when, and why—no more email archaeology." },
+    { t: "KSA‑ready.", d: "WPS exports, ZATCA e‑invoicing, bilingual artifacts." },
   ];
   return (
     <section id="outcomes" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
@@ -147,13 +147,13 @@ function Outcomes() {
 
 function WhatWeShip() {
   const items = [
-    "AI assistants for internal teams",
+    "AI copilots for internal teams",
+    "Workspace automations (Gmail/Sheets/Docs/Drive)",
     "IoT ingest → rules/alerts → dashboards",
-    "Gmail/Sheets/Docs/Drive automations",
-    "Contract and NDA pipelines",
-    "KPI models and data quality checks",
-    "Secure credential handling",
-    "Observability and runbooks",
+    "Contract/NDA pipelines",
+    "KPI models and data quality",
+    "Secrets & access hygiene",
+    "Runbooks and observability",
   ];
   return (
     <section id="what-we-ship" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
@@ -228,37 +228,38 @@ function Approach() {
 }
 
 function CaseStudies() {
-  const cases = [
-    { title: "Fuel losses → visibility in 3 weeks", impact: "22% reduction in unexplained losses", scope: "RS‑485 fuel sensor + gateway → MQTT → ThingsBoard; alerts: overfill, unauthorized refuel; weekly variance report." },
-    { title: "Document chaos → single source of truth", impact: "60% admin time saved", scope: "Gmail/Drive automations; NDA/contract pipelines with Apps Script; DLP checks." },
-    { title: "Field inspections → no spreadsheets", impact: "100% traceable sign‑offs", scope: "Mobile form → validation → PDF pack → dashboard KPIs → audit export." },
+  const proofs = [
+    "22% fewer unexplained fuel losses",
+    "<24h doc turnaround",
+    "100% traceable field sign‑offs",
+    "Ready‑mix fleet utilization made measurable",
+  ];
+  const quotes = [
+    "Delivered measurable outcomes under tight constraints.",
+    "Understands KSA ops and compliance.",
+    "Writes the runbooks our team actually follows.",
   ];
   return (
-    <section id="case-studies" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
+    <section id="proof" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-        <div className="mb-10 text-center">
-          <h2 className="heading-underline font-display text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Strategic Vision & Competitive Edge</h2>
-          <p className="mt-2 text-white/80">How we operate and why it compounds.</p>
+        <div className="mb-8 text-center">
+          <h2 className="heading-underline font-display text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Proof snapshots (anonymized)</h2>
         </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          <div className="rounded-2xl border bg-black/50 p-6 backdrop-blur" style={{ borderColor: `${GOLD}55` }}>
-            <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>Strategic Vision & Leadership</h3>
-            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-white/85">
-              <li>Innovation — AI and emerging tech for disruption</li>
-              <li>Operational Excellence — automation and transformation</li>
-              <li>Scalability — sustainable growth</li>
-              <li>Customer‑centric — tailored solutions</li>
-              <li>Ethical & Sustainable — responsible practices</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border bg-black/50 p-6 backdrop-blur" style={{ borderColor: `${GOLD}55` }}>
-            <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>Competitive Advantages</h3>
-            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-white/85">
-              <li>Cross‑industry expertise</li>
-              <li>Technology‑driven solutions</li>
-              <li>Scalability & global vision</li>
-              <li>Leadership & innovation</li>
-            </ul>
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2">
+          {proofs.map((p, i) => (
+            <div key={i} className="card-star-hover rounded-2xl border bg-black/50 p-5 text-center" style={{ borderColor: `${GOLD}55` }}>
+              <p className="text-sm text-white/85">{p}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mx-auto mt-10 max-w-4xl text-center">
+          <h3 className="font-display text-xl font-semibold" style={{ color: GOLD }}>What clients say</h3>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {quotes.map((q, i) => (
+              <div key={i} className="rounded-xl border bg-black/50 p-4" style={{ borderColor: `${GOLD}55` }}>
+                <p className="text-sm text-white/80">“{q}”</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

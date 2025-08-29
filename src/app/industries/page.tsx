@@ -5,11 +5,12 @@ const GOLD = "#D4AF37";
 
 export default function Industries() {
   const sectors = [
-    { t: "Energy & Logistics", d: "Telemetry, auth, and consumption analytics; usage‑based docs." },
-    { t: "Construction & Materials", d: "Ready‑mix, geofences, drum RPM, utilization and variance." },
-    { t: "Industrial & Field Ops", d: "Work orders, photo evidence packs, safety/compliance." },
-    { t: "SME & SaaS back‑office", d: "Sales ops, HR onboarding/offboarding, bilingual legal ops." },
-    { t: "e‑Mobility & Hydrogen", d: "Strategy, pilots, telemetry and reporting." },
+    { t: "Energy & Fuels", d: "Fuel telemetry and control, driver/vehicle auth, usage‑based billing, procurement automations, variance reports." },
+    { t: "Construction & Ready‑Mix", d: "Drum RPM, site geofences, idle vs. pour windows, incident alerts, fleet KPIs." },
+    { t: "Logistics & Fleet", d: "Trip segmentation, tank level monitoring (ultrasonic/RS‑485), refuel accountability, geofence compliance, uptime." },
+    { t: "Industrial & Field Ops", d: "Work‑order automation, photo evidence packs, timestamped safety/compliance, SLA dashboards." },
+    { t: "SME & SaaS Back‑Office", d: "Sales ops automations, shared inbox playbooks, bilingual legal ops, HR onboarding/offboarding, WPS/ZATCA flows." },
+    { t: "e‑Mobility & Hydrogen (strategy)", d: "Pilot design, charging/fueling telemetry, ESG reporting, partnership enablement." },
   ];
   return (
     <div className="text-white">

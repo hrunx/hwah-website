@@ -3,7 +3,7 @@ import PageHeader from "@/components/PageHeader";
 
 const GOLD = "#D4AF37";
 
-export default function ServicesIndex() {
+export default function Capabilities() {
   const areas = [
     { title: "Advisory & Architecture", bullets: ["Workflows mapped, boundaries set, and done = measurable.", "Diagrams, SLOs, and clean owner handover."] },
     { title: "AI Copilots & Knowledge Systems", bullets: ["Drive/DB retrieval chat with policy‑aware prompts.", "Red‑team tested; bilingual with explainable citations."] },
@@ -33,5 +33,6 @@ export default function ServicesIndex() {
     </div>
   );
 }
+
 
 

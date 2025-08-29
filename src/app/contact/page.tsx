@@ -38,7 +38,7 @@ export default function ContactPage() {
       <section className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Let’s make your operations observable and automatic</h1>
+            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Let’s turn busywork into signals</h1>
             <p className="mt-2 text-white/80">Email <a href="mailto:hrn@hwah.net" className="underline" style={{ color: GOLD_SOFT }}>hrn@hwah.net</a> or use the form below. Response within one business day.</p>
           </div>
           <div className="mx-auto mt-8 max-w-2xl">
