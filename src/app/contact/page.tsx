@@ -2,37 +2,13 @@
 
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { ArrowRight } from "lucide-react";
 
 const GOLD = "#D4AF37";
 const GOLD_SOFT = "#E6C766";
 
 export default function ContactPage() {
-  const [status, setStatus] = useState<string | null>(null);
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    // Netlify requires this field in the payload
-    formData.set("form-name", "contact");
-    try {
-      const res = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(Object.fromEntries(formData as Iterable<[string, string]>)).toString(),
-      });
-      if (res.ok) {
-        form.reset();
-        setStatus("sent");
-        window.location.href = "/contact/success";
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  };
   return (
     <div className="relative min-h-screen bg-black text-white">
       <section className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
@@ -42,7 +18,7 @@ export default function ContactPage() {
             <p className="mt-2 text-white/80">Email <a href="mailto:hrn@hwah.net" className="underline" style={{ color: GOLD_SOFT }}>hrn@hwah.net</a> or use the form below. Response within one business day.</p>
           </div>
           <div className="mx-auto mt-8 max-w-2xl">
-            <form name="contact" data-netlify="true" netlify-honeypot="bot-field" onSubmit={onSubmit} className="grid gap-4 rounded-2xl border bg-black/50 p-6 shadow-sm backdrop-blur" style={{ borderColor: `${GOLD}55` }}>
+            <form name="contact" method="POST" action="/contact/success" data-netlify="true" netlify-honeypot="bot-field" className="grid gap-4 rounded-2xl border bg-black/50 p-6 shadow-sm backdrop-blur" style={{ borderColor: `${GOLD}55` }}>
               <input type="hidden" name="form-name" value="contact" />
               <p hidden>
                 <label>Don’t fill this out: <input name="bot-field" /></label>
@@ -78,9 +54,6 @@ export default function ContactPage() {
               <button className="btn-gold-outline inline-flex items-center justify-center gap-2 px-5 py-3 font-medium">
                 <ArrowRight className="h-4 w-4" /> Send
               </button>
-              {status === "error" ? (
-                <p className="mt-2 text-sm text-red-400">There was an issue sending your message. Please try again.</p>
-              ) : null}
             </form>
           </div>
         </div>

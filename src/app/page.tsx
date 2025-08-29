@@ -286,7 +286,7 @@ function Newsletter() {
         <div className="mx-auto max-w-3xl text-center">
           <h3 className="heading-underline font-display text-2xl font-semibold" style={{ color: GOLD }}>Dispatches from the Lab</h3>
           <p className="mt-2 text-white/80">Short notes on automation patterns, telemetry pitfalls, and better dashboards. No fluff, no spam.</p>
-          <form name="newsletter" method="POST" data-netlify="true" className="mx-auto mt-5 flex max-w-xl items-center gap-2">
+          <form name="newsletter" method="POST" data-netlify="true" action="/?newsletter=success#newsletter" className="mx-auto mt-5 flex max-w-xl items-center gap-2">
             <input type="hidden" name="form-name" value="newsletter" />
             <input name="email" type="email" required placeholder="you@company.com" className="flex-1 rounded-xl border bg-black/60 px-4 py-3 text-white outline-none" style={{ borderColor: `${GOLD}44` }} />
             <button className="btn-gold-outline px-4 py-3">Subscribe</button>
