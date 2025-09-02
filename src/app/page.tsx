@@ -1,14 +1,13 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import DraggableTimeline from "@/components/DraggableTimeline";
 import type { Variants } from "framer-motion";
-import { Rocket, Cpu, Radar, ShieldCheck, ArrowRight, Gauge, Cable } from "lucide-react";
+import DraggableTimeline from "@/components/DraggableTimeline";
+import { ArrowRight, Rocket, Cpu, Radar, ShieldCheck, Building2, ClipboardCheck, Sparkles } from "lucide-react";
 
-const GOLD = "#D4AF37"; // classic metallic gold
-const GOLD_SOFT = "#E6C766"; // lighter accent
+const GOLD = "#D4AF37";
+const GOLD_SOFT = "#E6C766";
 
 const container = {
   hidden: { opacity: 0 },
@@ -17,36 +16,47 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 12 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 120, damping: 16 },
-  },
+  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 120, damping: 16 } },
 } satisfies Variants;
-// Stars moved to layout
-// Nav moved to layout
+
+export default function Page() {
+  return (
+    <div className="relative min-h-screen text-white">
+      <Hero />
+      <Achievements />
+      <FeatureTriplet />
+      <HoldingsGrid />
+      <Outcomes />
+      <WhatWeShip />
+      <Solutions />
+      <Approach />
+      <ThinkBand />
+      <CaseStudies />
+      <Newsletter />
+      <Contact />
+    </div>
+  );
+}
 
 function Hero() {
   return (
-    <section id="home" className="relative">
+    <section className="relative">
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0" style={{ backgroundImage: "url('/hero/sungrazer.gif')", backgroundSize: "cover", backgroundPosition: "center" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,.92), rgba(0,0,0,.68) 30%, rgba(0,0,0,.92))" }} />
       </div>
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28">
+      <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
         <motion.div variants={container} initial="hidden" animate="show" className="text-center">
-          <motion.h1 variants={item} className="font-display mx-auto max-w-4xl text-4xl font-extrabold tracking-tight sm:text-6xl" style={{ color: GOLD }}>
-            ENDLESS POSSIBILITIES
-          </motion.h1>
+          <motion.h1 variants={item} className="font-display mx-auto max-w-4xl text-4xl font-extrabold tracking-tight sm:text-6xl" style={{ color: GOLD }}>ENDLESS POSSIBILITIES</motion.h1>
           <motion.p variants={item} className="mx-auto mt-3 max-w-3xl text-balance text-lg" style={{ color: GOLD_SOFT }}>
-            A Saudi‑born systems studio for serious operators. We design small, composable automations that remove busywork and surface truth—AI copilots, IoT telemetry, and clean data pipelines—delivered with security by design.
+            HWAH Industries LLC is a Saudi-born holding and systems studio. We design, build, and operate small, auditable systems that turn messy operations into measurable outcomes. Today we execute through three sister units—Research, Consulting, and Operating—so ideas become pilots, pilots become production, and production keeps improving.
           </motion.p>
           <motion.div variants={item} className="mt-8 flex items-center justify-center gap-3">
-            <a href="#contact" className="btn-gold-outline inline-flex items-center gap-2 px-5 py-3 font-medium">
+            <a href="/contact" className="btn-gold-outline inline-flex items-center gap-2 px-5 py-3 font-medium">
               <Rocket className="h-4 w-4" /> Book a discovery call
             </a>
-            <a href="/work" className="btn-gold-outline inline-flex items-center gap-2 px-5 py-3 font-medium">
-              See the work <ArrowRight className="h-4 w-4" />
+            <a href="/holdings" className="btn-gold-outline inline-flex items-center gap-2 px-5 py-3 font-medium">
+              Explore our holdings <ArrowRight className="h-4 w-4" />
             </a>
           </motion.div>
         </motion.div>
@@ -59,85 +69,45 @@ function Hero() {
           <span className="mx-2">•</span>
           <span className="rounded-full border px-3 py-1" style={{ borderColor: `${GOLD}44` }}>Security by habit</span>
         </div>
-        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: "spring", stiffness: 120, damping: 18 }} className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-3">
-          {[
-            { icon: Cpu, title: "Systems that stick.", desc: "Small parts. Strong docs. Observable pipelines." },
-            { icon: Radar, title: "Signals over noise.", desc: "Dashboards and alerts that actually move decisions." },
-            { icon: ShieldCheck, title: "Secure by habit.", desc: "Least privilege, logs, reviews — day one." },
-          ].map((f, i) => (
-            <motion.div key={i} variants={item} className="group rounded-2xl border bg-black/50 p-5 shadow-sm backdrop-blur transition hover:shadow" style={{ borderColor: `${GOLD}55` }}>
+      </div>
+    </section>
+  );
+}
+
+function Achievements() {
+  return (
+    <section className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+        <div className="rounded-2xl border bg-black/40 p-4 text-center text-sm" style={{ borderColor: `${GOLD}55`, color: GOLD_SOFT }}>
+          <span>OpenAI Beta Access</span>
+          <span className="mx-2">•</span>
+          <span>Google Cloud Innovator</span>
+          <span className="mx-2">•</span>
+          <span>Named in “Middle East’s 10 Most Influential Business Leaders to Follow in 2025” (CIO Magazine) </span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FeatureTriplet() {
+  const feats = [
+    { icon: Cpu, title: "Systems that stick.", desc: "Small parts. Strong docs. Observable pipelines." },
+    { icon: Radar, title: "Signals over noise.", desc: "Dashboards and alerts that actually move decisions." },
+    { icon: ShieldCheck, title: "Secure by habit.", desc: "Least privilege, logs, reviews — day one." },
+  ];
+  return (
+    <section className="relative" style={{ borderColor: `${GOLD}33` }}>
+      <div className="mx-auto max-w-7xl px-4 pb-2 sm:px-6">
+        <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-3">
+          {feats.map((f, i) => (
+            <motion.div key={i} variants={item} initial="hidden" whileInView="show" viewport={{ once: true }} className="group rounded-2xl border bg-black/50 p-5 shadow-sm backdrop-blur transition hover:shadow" style={{ borderColor: `${GOLD}55` }}>
               <div className="mb-3 inline-flex rounded-xl p-2 text-black" style={{ backgroundColor: GOLD }}>
                 <f.icon className="h-5 w-5" />
               </div>
               <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>{f.title}</h3>
               <p className="mt-1 text-sm text-white/80">{f.desc}</p>
             </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-function Services() {
-  const cards = [
-    { icon: Cpu, title: "Information Technology (IT) & Digital Transformation", desc: "Software delivery, AI, cloud, and cybersecurity.", href: "/services" },
-    { icon: Cable, title: "Logistics & Supply Chain", desc: "Real‑time tracking, fleet mgmt, warehousing, last‑mile.", href: "/services" },
-    { icon: Gauge, title: "Business Development & Expansion", desc: "Research, market entry, partnerships, revenue ops.", href: "/services" },
-    { icon: ShieldCheck, title: "Technology Innovation & R&D", desc: "AI, blockchain, IoT — proprietary innovation.", href: "/services" },
-  ];
-  return (
-    <section id="services" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-        <div className="mb-10 text-center">
-          <h2 className="heading-underline text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Services</h2>
-          <p className="mt-2 text-white/80">Small, composable systems that outlive hype cycles.</p>
-        </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {cards.map((c, i) => (
-            <motion.a
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05, type: "spring", stiffness: 110, damping: 16 }}
-              href={c.href}
-              className="card-star-hover relative overflow-hidden rounded-2xl border bg-black/50 p-6 shadow-sm backdrop-blur transition hover:bg-white/5"
-              style={{ borderColor: `${GOLD}55` }}
-            >
-              <div className="mb-3 inline-flex rounded-xl p-2 text-black" style={{ backgroundColor: GOLD }}>
-                <c.icon className="h-5 w-5" />
-              </div>
-              <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>{c.title}</h3>
-              <p className="mt-2 text-sm text-white/80">{c.desc}</p>
-            </motion.a>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Outcomes() {
-  const tiles = [
-    { t: "Fewer clicks, faster flows.", d: "Routine processes cut by 30–70% steps." },
-    { t: "From field to decision.", d: "Sensors → rules/alerts → dashboards with explainable metrics." },
-    { t: "Clear ownership.", d: "Who did what, when, and why—no more email archaeology." },
-    { t: "KSA‑ready.", d: "WPS exports, ZATCA e‑invoicing, bilingual artifacts." },
-  ];
-  return (
-    <section id="outcomes" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-        <div className="mb-10 text-center">
-          <h2 className="heading-underline text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Outcomes</h2>
-          <p className="mt-2 text-white/80">Operator‑level wins you can measure.</p>
-        </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {tiles.map((c, i) => (
-            <div key={i} className="card-star-hover rounded-2xl border bg-black/50 p-6 backdrop-blur" style={{ borderColor: `${GOLD}55` }}>
-              <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>{c.t}</h3>
-              <p className="mt-2 text-sm text-white/85">{c.d}</p>
-            </div>
           ))}
         </div>
       </div>
@@ -148,20 +118,124 @@ function Outcomes() {
 function WhatWeShip() {
   const items = [
     "AI copilots for internal teams",
+    "Agentic AI platforms (multi-agent orchestration)",
     "Workspace automations (Gmail/Sheets/Docs/Drive)",
-    "IoT ingest → rules/alerts → dashboards",
+    "IoT telemetry (RS-485/Modbus → MQTT)",
+    "KPI models & dashboards",
     "Contract/NDA pipelines",
-    "KPI models and data quality",
-    "Secrets & access hygiene",
-    "Runbooks and observability",
+    "Security & observability",
   ];
   return (
-    <section id="what-we-ship" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
+    <section className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-6 text-center">
-          <h2 className="heading-underline text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>What we ship</h2>
+          <h2 className="heading-underline text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>What we actually ship</h2>
         </div>
         <div className="mx-auto max-w-5xl">
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {items.map((v, i) => (
+              <li key={i} className="card-star-hover rounded-xl border bg-black/50 px-4 py-3 text-sm text-white/85" style={{ borderColor: `${GOLD}44` }}>
+                {v}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HoldingsGrid() {
+  const [active, setActive] = useState<"research" | "consulting" | "operating">("research");
+  const cards = [
+    { key: "research" as const, icon: Sparkles, title: "HWAH Research", desc: "R&D and first‑of‑a‑kind builds." },
+    { key: "consulting" as const, icon: ClipboardCheck, title: "HWAH Consulting", desc: "Blueprints that ship." },
+    { key: "operating" as const, icon: Building2, title: "HWAH Operating", desc: "Operations that don’t drift." },
+  ];
+  const details: Record<typeof active, { heading: string; bullets: string[]; note?: string }> = {
+    research: {
+      heading: "What we do",
+      bullets: [
+        "Energy market intelligence; ICP maps; bilingual reports & dashboards",
+        "Agentic platforms & copilots; role separation; policy‑aware prompts",
+        "Telemetry pilots: sensor selection (RS‑485/Modbus/4–20 mA), IoT gateways, MQTT ingest, rules/alerts, dashboards",
+        "Automation prototypes: Google Workspace (Apps Script); docs → approvals → archive",
+      ],
+      note: "Contact: hrn@hwah.net",
+    },
+    consulting: {
+      heading: "Services",
+      bullets: [
+        "Advisory & architecture: SLOs, acceptance tests, handover",
+        "Workspace automations: templating → e‑sign → archive; DLP & routing",
+        "Data & KPIs: semantic layers; ETL/ELT to BigQuery/Postgres; Looker/Metabase",
+        "Integrations: Teltonika/ThingsBoard/Flespi, HubSpot, WhatsApp, OpenAI/DeepSeek",
+      ],
+      note: "Contact: hrn@hwah.net",
+    },
+    operating: {
+      heading: "Operate covers",
+      bullets: [
+        "COO‑level execution: cadence, pricing/growth, GTM & partnerships",
+        "SLA monitoring & incident playbooks; telemetry dashboards; alerts",
+        "Security hygiene: least‑privilege, rotation, access reviews, logs",
+        "Change control: versioned configs, rollbacks, release notes",
+      ],
+      note: "Contact: hrn@hwah.net",
+    },
+  };
+  return (
+    <section id="holdings" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <div className="mb-10 text-center">
+          <h2 className="heading-underline text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Holdings</h2>
+          <p className="mt-2 text-white/80">Three sister units — discover → build → operate.</p>
+        </div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+          {cards.map((c) => (
+            <button
+              key={c.key}
+              onClick={() => setActive(c.key)}
+              className="card-star-hover rounded-2xl border bg-black/50 p-6 text-left backdrop-blur transition hover:bg-white/5"
+              style={{ borderColor: active === c.key ? `${GOLD}99` : `${GOLD}55` }}
+            >
+              <div className="mb-3 inline-flex rounded-xl p-2 text-black" style={{ backgroundColor: GOLD }}>
+                <c.icon className="h-5 w-5" />
+              </div>
+              <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>{c.title}</h3>
+              <p className="mt-2 text-sm text-white/80">{c.desc}</p>
+            </button>
+          ))}
+        </div>
+        <div className="mx-auto mt-8 max-w-3xl rounded-2xl border bg-black/50 p-6" style={{ borderColor: `${GOLD}55` }}>
+          <h3 className="font-display text-lg font-semibold" style={{ color: GOLD }}>{details[active].heading}</h3>
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-white/85">
+            {details[active].bullets.map((b, i) => (<li key={i}>{b}</li>))}
+          </ul>
+          {details[active].note ? <p className="mt-3 text-sm" style={{ color: GOLD_SOFT }}>{details[active].note}</p> : null}
+          <div className="mt-4">
+            <a href={`/holdings#${active}`} className="btn-gold-outline inline-flex items-center gap-2 px-4 py-2 text-sm">See details <ArrowRight className="h-4 w-4" /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Outcomes() {
+  const items = [
+    "22% fewer unexplained fuel losses",
+    "<24h turnaround for standard contracts",
+    "100% traceable field sign-offs",
+    "COO-level cadence for a SaaS/ERP platform",
+  ];
+  return (
+    <section className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <div className="mb-6 text-center">
+          <h2 className="heading-underline text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Outcomes (anonymized)</h2>
+        </div>
+        <div className="mx-auto max-w-4xl">
           <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {items.map((v, i) => (
               <li key={i} className="card-star-hover rounded-xl border bg-black/50 px-4 py-3 text-sm text-white/85" style={{ borderColor: `${GOLD}44` }}>
@@ -243,7 +317,7 @@ function CaseStudies() {
     <section id="proof" className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mb-8 text-center">
-          <h2 className="heading-underline font-display text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Proof snapshots (anonymized)</h2>
+          <h2 className="heading-underline font-display text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>What clients say</h2>
         </div>
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2">
           {proofs.map((p, i) => (
@@ -253,8 +327,7 @@ function CaseStudies() {
           ))}
         </div>
         <div className="mx-auto mt-10 max-w-4xl text-center">
-          <h3 className="font-display text-xl font-semibold" style={{ color: GOLD }}>What clients say</h3>
-          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             {quotes.map((q, i) => (
               <div key={i} className="rounded-xl border bg-black/50 p-4" style={{ borderColor: `${GOLD}55` }}>
                 <p className="text-sm text-white/80">“{q}”</p>
@@ -330,22 +403,4 @@ function Contact() {
   );
 }
 
-// Footer moved to layout
-
-export default function Page() {
-  return (
-    <div className="relative min-h-screen text-white">
-      <Hero />
-      <Services />
-      <Outcomes />
-      <WhatWeShip />
-      <Solutions />
-      <Approach />
-      <ThinkBand />
-      <CaseStudies />
-      <Newsletter />
-      <Contact />
-    </div>
-  );
-}
 

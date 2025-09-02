@@ -9,7 +9,7 @@ export default function Iot() {
       <ul className="mt-4 list-disc space-y-2 pl-6 text-white/85">
         <li>Sensor selection, RS‑485/Modbus/4–20mA, edge devices</li>
         <li>Ingest via MQTT/HTTP, rules & alerts</li>
-        <li>Dashboards (ThingsBoard or custom), reports, rollouts</li>
+        <li>Dashboards ( custom), reports, rollouts</li>
         <li>RFID/UHF authorization flows</li>
       </ul>
     </div>

@@ -8,7 +8,7 @@ export default function Capabilities() {
     { title: "Advisory & Architecture", bullets: ["Workflows mapped, boundaries set, and done = measurable.", "Diagrams, SLOs, and clean owner handover."] },
     { title: "AI Copilots & Knowledge Systems", bullets: ["Drive/DB retrieval chat with policy‑aware prompts.", "Red‑team tested; bilingual with explainable citations."] },
     { title: "Google Workspace Automations", bullets: ["Gmail, Sheets, Docs, Drive, Forms; retries and logs.", "Document pipelines: template → e‑sign → archive."] },
-    { title: "IoT & Telemetry", bullets: ["RS‑485/Modbus/4–20 mA sensors, MQTT/HTTP ingest.", "Rules & alerts; ThingsBoard/Looker/custom dashboards."] },
+    { title: "IoT & Telemetry", bullets: ["RS‑485/Modbus/4–20 mA sensors, MQTT/HTTP ingest.", "Rules & alerts; Looker/custom dashboards."] },
     { title: "Data & Analytics", bullets: ["KPI modeling, semantic layers, ETL/ELT to BQ/PG.", "Looker/Metabase dashboards; data quality & lineage."] },
     { title: "Security & Observability", bullets: ["Least privilege, secret hygiene, logging, incidents.", "Health checks and practical runbooks."] },
     { title: "Integrations & APIs", bullets: ["Flespi, ThingsBoard, OpenAI/DeepSeek, Supabase/Firestore.", "HubSpot, WhatsApp gateways; versioned adapters."] },

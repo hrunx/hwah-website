@@ -16,9 +16,7 @@ export default function Footer() {
               <a href="/legal/dpa" className="hover:opacity-90" style={{ color: GOLD_SOFT }}>Data Processing Addendum</a>
             </div>
             <div className="flex items-center gap-4" style={{ color: GOLD_SOFT }}>
-              <span>Support: <a href="mailto:hrn@hwah.net" className="underline">hrn@hwah.net</a></span>
-              <span>Legal: <a href="mailto:hrn@hwah.net" className="underline">hrn@hwah.net</a></span>
-              <span>Security: <a href="mailto:hrn@hwah.net" className="underline">hrn@hwah.net</a></span>
+              <span>Email: <a href="mailto:hrn@hwah.net" className="underline">hrn@hwah.net</a></span>
             </div>
           </div>
         </div>

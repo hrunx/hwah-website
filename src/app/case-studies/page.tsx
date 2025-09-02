@@ -12,7 +12,7 @@ export default function CaseStudies() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
           {[{
             title: "Fuel losses → visibility in 3 weeks",
-            scope: "RS‑485 fuel sensor + Teltonika → MQTT → ThingsBoard; alerts: overfill, unauthorized refuel; weekly variance report.",
+            scope: "RS‑485 fuel sensor  → MQTT → Dashboard; alerts: overfill, unauthorized refuel; weekly variance report.",
             impact: "22% reduction in unexplained losses; refuel accountability by driver/vehicle."
           }, {
             title: "Document chaos → single source of truth",

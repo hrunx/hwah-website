@@ -14,8 +14,8 @@ export default function ContactPage() {
       <section className="relative border-t" style={{ borderColor: `${GOLD}33` }}>
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Let’s turn busywork into signals</h1>
-            <p className="mt-2 text-white/80">Email <a href="mailto:hrn@hwah.net" className="underline" style={{ color: GOLD_SOFT }}>hrn@hwah.net</a> or use the form below. Response within one business day.</p>
+            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: GOLD }}>Contact — Book a Discovery Call</h1>
+            <p className="mt-2 text-white/80">Email <a href="mailto:hrn@hwah.net" className="underline" style={{ color: GOLD_SOFT }}>hrn@hwah.net</a> or use the form below. We reply within 1 business day.</p>
           </div>
           <div className="mx-auto mt-8 max-w-2xl">
             <form name="contact" method="POST" action="/contact/success" data-netlify="true" netlify-honeypot="bot-field" className="grid gap-4 rounded-2xl border bg-black/50 p-6 shadow-sm backdrop-blur" style={{ borderColor: `${GOLD}55` }}>
@@ -28,28 +28,12 @@ export default function ContactPage() {
                 <input name="name" required className="rounded-xl border bg-black/60 px-4 py-3 text-white outline-none focus:ring-2" style={{ borderColor: `${GOLD}44` }} />
               </div>
               <div className="grid gap-2">
-                <label className="text-sm font-medium" style={{ color: GOLD_SOFT }}>Company</label>
-                <input name="company" className="rounded-xl border bg-black/60 px-4 py-3 text-white outline-none focus:ring-2" style={{ borderColor: `${GOLD}44` }} />
-              </div>
-              <div className="grid gap-2">
                 <label className="text-sm font-medium" style={{ color: GOLD_SOFT }}>Work email</label>
                 <input type="email" name="email" required className="rounded-xl border px-4 py-3 text-white outline-none focus:ring-2" style={{ borderColor: `${GOLD}44`, backgroundColor: "#0f0f0f" }} />
               </div>
               <div className="grid gap-2">
-                <label className="text-sm font-medium" style={{ color: GOLD_SOFT }}>Phone (optional)</label>
-                <input name="phone" className="rounded-xl border px-4 py-3 text-white outline-none focus:ring-2" style={{ borderColor: `${GOLD}44`, backgroundColor: "#0f0f0f" }} />
-              </div>
-              <div className="grid gap-2">
                 <label className="text-sm font-medium" style={{ color: GOLD_SOFT }}>What do you want to improve?</label>
                 <textarea name="message" rows={5} className="rounded-xl border px-4 py-3 text-white outline-none focus:ring-2" style={{ borderColor: `${GOLD}44`, backgroundColor: "#0f0f0f" }} />
-              </div>
-              <div className="grid gap-2">
-                <label className="text-sm font-medium" style={{ color: GOLD_SOFT }}>Budget range</label>
-                <input name="budget" className="rounded-xl border px-4 py-3 text-white outline-none focus:ring-2" style={{ borderColor: `${GOLD}44`, backgroundColor: "#0f0f0f" }} />
-              </div>
-              <div className="grid gap-2">
-                <label className="text-sm font-medium" style={{ color: GOLD_SOFT }}>When do you need this?</label>
-                <input name="timeline" className="rounded-xl border px-4 py-3 text-white outline-none focus:ring-2" style={{ borderColor: `${GOLD}44`, backgroundColor: "#0f0f0f" }} />
               </div>
               <button className="btn-gold-outline inline-flex items-center justify-center gap-2 px-5 py-3 font-medium">
                 <ArrowRight className="h-4 w-4" /> Send
@@ -61,5 +45,6 @@ export default function ContactPage() {
     </div>
   );
 }
+
 
 

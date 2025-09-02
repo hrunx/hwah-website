@@ -4,11 +4,13 @@ export default function SEOJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "HWAH Industries",
-    url: "https://hwah.net",
-    logo: "https://hwah.net/icon.png",
+    name: "HWAH Industries LLC",
+    url: "https://www.hwah.net",
+    logo: "https://www.hwah.net/brand/hwah-logo-gold.jpg",
+    email: "hrn@hwah.net",
     sameAs: [
       "https://www.linkedin.com/in/haroon-shafqat/",
+      "https://github.com/hrunx"
     ],
     contactPoint: [{
       "@type": "ContactPoint",

@@ -18,12 +18,9 @@ export default function Nav() {
           <span className="text-lg font-semibold tracking-tight" style={{ color: GOLD }}>HWAH INDUSTRIES</span>
         </Link>
         <div className="hidden gap-6 text-sm sm:flex" style={{ color: GOLD_SOFT }}>
-          <Link href="/capabilities" className="hover:text-white">Capabilities</Link>
-          <Link href="/industries" className="hover:text-white">Industries</Link>
-          <Link href="/work" className="hover:text-white">Work</Link>
+          <Link href="/" className="hover:text-white">Home</Link>
           <Link href="/holdings" className="hover:text-white">Holdings</Link>
-          <Link href="/lab" className="hover:text-white">Lab</Link>
-          <Link href="/engage" className="hover:text-white">Engage</Link>
+          <Link href="/industries" className="hover:text-white">Industries</Link>
           <Link href="/about" className="hover:text-white">About</Link>
         </div>
         <div className="flex items-center gap-2">
@@ -49,12 +46,9 @@ export default function Nav() {
               </button>
             </div>
             <div className="mt-3 grid gap-2 text-sm" style={{ color: GOLD_SOFT }}>
-              <Link href="/capabilities" onClick={() => setOpen(false)} className="card-star-hover rounded-xl border bg-black/60 px-4 py-3">Capabilities</Link>
-              <Link href="/industries" onClick={() => setOpen(false)} className="card-star-hover rounded-xl border bg-black/60 px-4 py-3">Industries</Link>
-              <Link href="/work" onClick={() => setOpen(false)} className="card-star-hover rounded-xl border bg-black/60 px-4 py-3">Work</Link>
+              <Link href="/" onClick={() => setOpen(false)} className="card-star-hover rounded-xl border bg-black/60 px-4 py-3">Home</Link>
               <Link href="/holdings" onClick={() => setOpen(false)} className="card-star-hover rounded-xl border bg-black/60 px-4 py-3">Holdings</Link>
-              <Link href="/lab" onClick={() => setOpen(false)} className="card-star-hover rounded-xl border bg-black/60 px-4 py-3">Lab</Link>
-              <Link href="/engage" onClick={() => setOpen(false)} className="card-star-hover rounded-xl border bg-black/60 px-4 py-3">Engage</Link>
+              <Link href="/industries" onClick={() => setOpen(false)} className="card-star-hover rounded-xl border bg-black/60 px-4 py-3">Industries</Link>
               <Link href="/about" onClick={() => setOpen(false)} className="card-star-hover rounded-xl border bg-black/60 px-4 py-3">About</Link>
               <Link href="/contact" onClick={() => setOpen(false)} className="btn-gold-outline mt-2 inline-flex items-center justify-center gap-2 px-4 py-3 font-medium">
                 <Mail className="h-4 w-4" />
