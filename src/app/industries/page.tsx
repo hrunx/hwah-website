@@ -37,7 +37,7 @@ function Section({ title, bullets }: { title: string; bullets: string[] }) {
 function Grid() {
   const sectors = [
     { t: "Energy & Fuels", d: "Fuel telemetry and control, driver/vehicle auth, usage‑based billing, procurement automations, variance reports." },
-    { t: "Construction & Ready‑Mix", d: "Drum RPM, site geofences, idle vs. pour windows, incident alerts, fleet KPIs." },
+    { t: "AI & Technology (Agentic AI)", d: "Internal copilots (Arabic/English) with Drive/DB retrieval and citations; multi‑agent orchestration; Apps Script automation fabric across Gmail/Sheets/Docs/Drive." },
     { t: "Logistics & Fleet", d: "Trip segmentation, tank level monitoring (ultrasonic/RS‑485), refuel accountability, geofence compliance, uptime." },
     { t: "Industrial & Field Ops", d: "Work‑order automation, photo evidence packs, timestamped safety/compliance, SLA dashboards." },
     { t: "SME & SaaS Back‑Office", d: "Sales ops automations, shared inbox playbooks, bilingual legal ops, HR onboarding/offboarding, WPS/ZATCA flows." },
